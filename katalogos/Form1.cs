@@ -21,7 +21,7 @@ namespace katalogos
             BindingSource bs = new BindingSource();
 
             bs.DataSource = katalogosDataGridView.DataSource;
-            bs.Filter = "antapokritis LIKE '*" + this.searchFilter.Text.Trim() + "*'";
+            bs.Filter = "antapokritis LIKE '*" + this.searchFilter.Text.Trim() + "*' OR stratopedo LIKE '*" + this.searchFilter.Text.Trim() + "*'";
             katalogosDataGridView.DataSource = bs;
         }
 
