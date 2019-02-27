@@ -35,29 +35,29 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(katalogosMainForm));
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.katalogosDataGridView = new System.Windows.Forms.DataGridView();
-            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.clearFilters = new System.Windows.Forms.Button();
-            this.katalogosBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.katalogosDataSet = new katalogos.katalogosDataSet();
-            this.katalogosTableAdapter = new katalogos.katalogosDataSetTableAdapters.katalogosTableAdapter();
-            this.tableAdapterManager = new katalogos.katalogosDataSetTableAdapters.TableAdapterManager();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.katalogosBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.katalogosDataSet = new katalogos.katalogosDataSet();
+            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.clearFilters = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.katalogosTableAdapter = new katalogos.katalogosDataSetTableAdapters.katalogosTableAdapter();
+            this.tableAdapterManager = new katalogos.katalogosDataSetTableAdapters.TableAdapterManager();
             this.antapokritisFilter = new wmgCMS.WaterMarkTextBox();
             this.arithmosFilter = new wmgCMS.WaterMarkTextBox();
             this.titlosFilter = new wmgCMS.WaterMarkTextBox();
             this.stratopedoPerioxiFIlter = new wmgCMS.WaterMarkTextBox();
             this.paratirisisFilter = new wmgCMS.WaterMarkTextBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.katalogosDataGridView)).BeginInit();
-            this.tableLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.katalogosBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.katalogosDataSet)).BeginInit();
+            this.tableLayoutPanel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -119,62 +119,6 @@
             this.katalogosDataGridView.Size = new System.Drawing.Size(1178, 505);
             this.katalogosDataGridView.TabIndex = 1;
             // 
-            // tableLayoutPanel2
-            // 
-            this.tableLayoutPanel2.ColumnCount = 6;
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanel2.Controls.Add(this.clearFilters, 5, 1);
-            this.tableLayoutPanel2.Controls.Add(this.antapokritisFilter, 0, 1);
-            this.tableLayoutPanel2.Controls.Add(this.arithmosFilter, 1, 1);
-            this.tableLayoutPanel2.Controls.Add(this.titlosFilter, 2, 1);
-            this.tableLayoutPanel2.Controls.Add(this.stratopedoPerioxiFIlter, 3, 1);
-            this.tableLayoutPanel2.Controls.Add(this.paratirisisFilter, 4, 1);
-            this.tableLayoutPanel2.Controls.Add(this.label1, 0, 0);
-            this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 3);
-            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
-            this.tableLayoutPanel2.RowCount = 2;
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(1178, 64);
-            this.tableLayoutPanel2.TabIndex = 0;
-            // 
-            // clearFilters
-            // 
-            this.clearFilters.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.clearFilters.Location = new System.Drawing.Point(928, 23);
-            this.clearFilters.Name = "clearFilters";
-            this.clearFilters.Size = new System.Drawing.Size(247, 38);
-            this.clearFilters.TabIndex = 3;
-            this.clearFilters.Text = "ΚΑΘΑΡΙΣΜΟΣ ΦΙΛΤΡΟΥ";
-            this.clearFilters.UseVisualStyleBackColor = true;
-            this.clearFilters.Click += new System.EventHandler(this.clearFilters_Click);
-            // 
-            // katalogosBindingSource
-            // 
-            this.katalogosBindingSource.DataMember = "katalogos";
-            this.katalogosBindingSource.DataSource = this.katalogosDataSet;
-            // 
-            // katalogosDataSet
-            // 
-            this.katalogosDataSet.DataSetName = "katalogosDataSet";
-            this.katalogosDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // katalogosTableAdapter
-            // 
-            this.katalogosTableAdapter.ClearBeforeFill = true;
-            // 
-            // tableAdapterManager
-            // 
-            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
-            this.tableAdapterManager.katalogosTableAdapter = this.katalogosTableAdapter;
-            this.tableAdapterManager.UpdateOrder = katalogos.katalogosDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
-            // 
             // dataGridViewTextBoxColumn1
             // 
             this.dataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
@@ -224,6 +168,76 @@
             this.dataGridViewTextBoxColumn6.HeaderText = "ΠΑΡΑΤΗΡΗΣΕΙΣ";
             this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
             this.dataGridViewTextBoxColumn6.ReadOnly = true;
+            // 
+            // katalogosBindingSource
+            // 
+            this.katalogosBindingSource.DataMember = "katalogos";
+            this.katalogosBindingSource.DataSource = this.katalogosDataSet;
+            // 
+            // katalogosDataSet
+            // 
+            this.katalogosDataSet.DataSetName = "katalogosDataSet";
+            this.katalogosDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // tableLayoutPanel2
+            // 
+            this.tableLayoutPanel2.ColumnCount = 6;
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel2.Controls.Add(this.clearFilters, 5, 1);
+            this.tableLayoutPanel2.Controls.Add(this.antapokritisFilter, 0, 1);
+            this.tableLayoutPanel2.Controls.Add(this.arithmosFilter, 1, 1);
+            this.tableLayoutPanel2.Controls.Add(this.titlosFilter, 2, 1);
+            this.tableLayoutPanel2.Controls.Add(this.stratopedoPerioxiFIlter, 3, 1);
+            this.tableLayoutPanel2.Controls.Add(this.paratirisisFilter, 4, 1);
+            this.tableLayoutPanel2.Controls.Add(this.label1, 0, 0);
+            this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 3);
+            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
+            this.tableLayoutPanel2.RowCount = 2;
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(1178, 64);
+            this.tableLayoutPanel2.TabIndex = 0;
+            // 
+            // clearFilters
+            // 
+            this.clearFilters.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.clearFilters.Location = new System.Drawing.Point(928, 23);
+            this.clearFilters.Name = "clearFilters";
+            this.clearFilters.Size = new System.Drawing.Size(247, 38);
+            this.clearFilters.TabIndex = 3;
+            this.clearFilters.Text = "ΚΑΘΑΡΙΣΜΟΣ ΦΙΛΤΡΟΥ";
+            this.clearFilters.UseVisualStyleBackColor = true;
+            this.clearFilters.Click += new System.EventHandler(this.clearFilters_Click);
+            // 
+            // label1
+            // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.label1.AutoSize = true;
+            this.tableLayoutPanel2.SetColumnSpan(this.label1, 6);
+            this.label1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label1.Location = new System.Drawing.Point(3, 2);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(1172, 16);
+            this.label1.TabIndex = 9;
+            this.label1.Text = "ΤΑ ΦΙΛΤΡΑ ΛΕΙΤΟΥΡΓΟΥΝ ΚΑΙ ΣΕ ΣΥΝΔΥΑΣΜΟ ΜΕΤΑΞΥ ΤΟΥΣ";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // katalogosTableAdapter
+            // 
+            this.katalogosTableAdapter.ClearBeforeFill = true;
+            // 
+            // tableAdapterManager
+            // 
+            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager.katalogosTableAdapter = this.katalogosTableAdapter;
+            this.tableAdapterManager.UpdateOrder = katalogos.katalogosDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
             // antapokritisFilter
             // 
@@ -285,20 +299,6 @@
             this.paratirisisFilter.WaterMarkText = "ΠΑΡΑΤΗΡΗΣΕΙΣ";
             this.paratirisisFilter.TextChanged += new System.EventHandler(this.paratirisisFilter_TextChanged);
             // 
-            // label1
-            // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.label1.AutoSize = true;
-            this.tableLayoutPanel2.SetColumnSpan(this.label1, 6);
-            this.label1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label1.Location = new System.Drawing.Point(3, 2);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(1172, 16);
-            this.label1.TabIndex = 9;
-            this.label1.Text = "ΤΑ ΦΙΛΤΡΑ ΛΕΙΤΟΥΡΓΟΥΝ ΚΑΙ ΣΕ ΣΥΝΔΥΑΣΜΟ ΜΕΤΑΞΥ ΤΟΥΣ";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // katalogosMainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -310,13 +310,14 @@
             this.Name = "katalogosMainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ΚΑΤΑΛΟΓΟΣ";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Form1_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.katalogosDataGridView)).EndInit();
-            this.tableLayoutPanel2.ResumeLayout(false);
-            this.tableLayoutPanel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.katalogosBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.katalogosDataSet)).EndInit();
+            this.tableLayoutPanel2.ResumeLayout(false);
+            this.tableLayoutPanel2.PerformLayout();
             this.ResumeLayout(false);
 
         }
