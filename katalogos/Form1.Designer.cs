@@ -226,7 +226,7 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(1172, 16);
             this.label1.TabIndex = 9;
-            this.label1.Text = "ΤΑ ΦΙΛΤΡΑ ΛΕΙΤΟΥΡΓΟΥΝ ΚΑΙ ΣΕ ΣΥΝΔΥΑΣΜΟ ΜΕΤΑΞΥ ΤΟΥΣ";
+            this.label1.Text = "ΤΑ ΦΙΛΤΡΑ ΛΕΙΤΟΥΡΓΟΥΝ ΚΑΙ ΣΕ ΣΥΝΔΥΑΣΜΟ ΜΕΤΑΞΥ ΤΟΥΣ - ΤΟ ESC ΚΑΘΑΡΙΖΕΙ ΤΑ ΠΕΔΙΑ";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // katalogosTableAdapter
@@ -250,6 +250,7 @@
             this.antapokritisFilter.WaterMarkColor = System.Drawing.Color.Gray;
             this.antapokritisFilter.WaterMarkText = "ΑΝΤΑΠΟΚΡΙΤΗΣ";
             this.antapokritisFilter.TextChanged += new System.EventHandler(this.antapokritisFilter_TextChanged);
+            this.antapokritisFilter.KeyUp += new System.Windows.Forms.KeyEventHandler(this.antapokritisFilter_KeyUp);
             // 
             // arithmosFilter
             // 
@@ -274,6 +275,7 @@
             this.titlosFilter.WaterMarkColor = System.Drawing.Color.Gray;
             this.titlosFilter.WaterMarkText = "ΤΙΤΛΟΣ";
             this.titlosFilter.TextChanged += new System.EventHandler(this.titlosFilter_TextChanged);
+            this.titlosFilter.KeyUp += new System.Windows.Forms.KeyEventHandler(this.titlosFilter_KeyUp);
             // 
             // stratopedoPerioxiFIlter
             // 
@@ -286,6 +288,7 @@
             this.stratopedoPerioxiFIlter.WaterMarkColor = System.Drawing.Color.Gray;
             this.stratopedoPerioxiFIlter.WaterMarkText = "ΣΤΡΑΤΟΠΕΔΟ-ΠΕΡΙΟΧΗ";
             this.stratopedoPerioxiFIlter.TextChanged += new System.EventHandler(this.stratopedoPerioxiFIlter_TextChanged);
+            this.stratopedoPerioxiFIlter.KeyUp += new System.Windows.Forms.KeyEventHandler(this.stratopedoPerioxiFIlter_KeyUp);
             // 
             // paratirisisFilter
             // 
@@ -298,6 +301,7 @@
             this.paratirisisFilter.WaterMarkColor = System.Drawing.Color.Gray;
             this.paratirisisFilter.WaterMarkText = "ΠΑΡΑΤΗΡΗΣΕΙΣ";
             this.paratirisisFilter.TextChanged += new System.EventHandler(this.paratirisisFilter_TextChanged);
+            this.paratirisisFilter.KeyUp += new System.Windows.Forms.KeyEventHandler(this.paratirisisFilter_KeyUp);
             // 
             // katalogosMainForm
             // 
@@ -306,12 +310,14 @@
             this.ClientSize = new System.Drawing.Size(1184, 561);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.KeyPreview = true;
             this.MinimumSize = new System.Drawing.Size(1200, 39);
             this.Name = "katalogosMainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ΚΑΤΑΛΟΓΟΣ";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Form1_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.katalogosMainForm_KeyDown);
             this.tableLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.katalogosDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.katalogosBindingSource)).EndInit();

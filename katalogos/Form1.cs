@@ -12,29 +12,34 @@ namespace katalogos
     public partial class katalogosMainForm : Form
     {
         private BindingSource bs;
+        private GreekEncoder enc;
+
 
         public katalogosMainForm()
         {
             InitializeComponent();
             this.bs = new BindingSource();
             this.bs.DataSource = katalogosDataGridView.DataSource;
+            this.enc = new GreekEncoder();
         }
 
-        private void searchFilter_TextChanged(object sender, EventArgs e)
-        {
-            //BindingSource bs = new BindingSource();
-
-            //bs.DataSource = katalogosDataGridView.DataSource;
-            bs.Filter = "antapokritis LIKE '*" + this.antapokritisFilter.Text.Trim() + "*' OR stratopedo LIKE '*" + this.antapokritisFilter.Text.Trim() + "*'";
-            katalogosDataGridView.DataSource = bs;
-        }
-
-        private void clearFilters_Click(object sender, EventArgs e)
+        private void clearTextInputs()
         {
             this.antapokritisFilter.Text = "";
             this.arithmosFilter.Text = "";
             this.stratopedoPerioxiFIlter.Text = "";
             this.paratirisisFilter.Text = "";
+        }
+
+        private void resetBindingSource()
+        {
+            this.bs.RemoveFilter();
+        }
+
+        private void clearFilters_Click(object sender, EventArgs e)
+        {
+            this.clearTextInputs();
+            this.resetBindingSource();
         }
 
         private void katalogosBindingNavigatorSaveItem_Click(object sender, EventArgs e)
@@ -54,33 +59,93 @@ namespace katalogos
 
         private void antapokritisFilter_TextChanged(object sender, EventArgs e)
         {
-            this.bs.Filter = "antapokritis LIKE '*" + this.antapokritisFilter.Text.Trim() + "*'";
+            //this.bs.Filter = "antapokritis LIKE '*" + this.antapokritisFilter.Text.Trim() + "*'";
+            this.bs.Filter = "antapokritis LIKE '*" + this.enc.resolveInput(this.antapokritisFilter.Text.Trim()) + "*' OR antapokritis LIKE '*" + this.antapokritisFilter.Text.Trim() + "*'";
             katalogosDataGridView.DataSource = this.bs;
         }
 
         private void arithmosFilter_TextChanged(object sender, EventArgs e)
         {
+            if (this.antapokritisFilter.Text.Trim().Length == 0)
+            {
+                return;
+            }
             this.bs.Filter = "arithmos LIKE '*" + this.arithmosFilter.Text.Trim() + "*'";
             katalogosDataGridView.DataSource = this.bs;
         }
 
         private void titlosFilter_TextChanged(object sender, EventArgs e)
         {
-            this.bs.Filter = "pliris_titlos LIKE '*" + this.titlosFilter.Text.Trim() + "*'";
+            if (this.titlosFilter.Text.Trim().Length == 0)
+            {
+                return;
+            }
+            //this.bs.Filter = "pliris_titlos LIKE '*" + this.titlosFilter.Text.Trim() + "*'";
+            this.bs.Filter = "pliris_titlos LIKE '*" + this.enc.resolveInput(this.titlosFilter.Text.Trim()) + "*' OR pliris_titlos LIKE '*" + this.titlosFilter.Text.Trim() + "*'";
             katalogosDataGridView.DataSource = this.bs;
         }
 
         private void stratopedoPerioxiFIlter_TextChanged(object sender, EventArgs e)
         {
-            
-            this.bs.Filter = "stratopedo LIKE '*" + this.stratopedoPerioxiFIlter.Text.Trim() + "*'";
+            if (this.stratopedoPerioxiFIlter.Text.Trim().Length == 0)
+            {
+                this.resetBindingSource();
+            }
+            //this.bs.Filter = "stratopedo LIKE '*" + this.stratopedoPerioxiFIlter.Text.Trim() + "*'";
+            this.bs.Filter = "stratopedo LIKE '*" + this.enc.resolveInput(this.stratopedoPerioxiFIlter.Text.Trim()) + "*' OR stratopedo LIKE '*" + this.stratopedoPerioxiFIlter.Text.Trim() + "*'";
             katalogosDataGridView.DataSource = this.bs;
         }
 
         private void paratirisisFilter_TextChanged(object sender, EventArgs e)
         {
-            this.bs.Filter = "paratirisis LIKE '*" + this.paratirisisFilter.Text.Trim() + "*'";
+            if (this.paratirisisFilter.Text.Trim().Length == 0)
+            {
+                return;
+            }
+            //this.bs.Filter = "paratirisis LIKE '*" + this.paratirisisFilter.Text.Trim() + "*'";
+            this.bs.Filter = "paratirisis LIKE '*" + this.enc.resolveInput(this.paratirisisFilter.Text.Trim()) + "*' OR paratirisis LIKE '*" + this.paratirisisFilter.Text.Trim() + "*'";
             katalogosDataGridView.DataSource = this.bs;
+        }
+
+        private void antapokritisFilter_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (this.antapokritisFilter.Text.Trim().Length == 0 && e.KeyCode == Keys.Back)
+            {
+                this.resetBindingSource();
+            }
+        }
+
+        private void stratopedoPerioxiFIlter_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (this.stratopedoPerioxiFIlter.Text.Trim().Length == 0 && e.KeyCode == Keys.Back)
+            {
+                this.resetBindingSource();
+            }
+        }
+
+        private void titlosFilter_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (this.titlosFilter.Text.Trim().Length == 0 && e.KeyCode == Keys.Back)
+            {
+                this.resetBindingSource();
+            }
+        }
+
+        private void paratirisisFilter_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (this.paratirisisFilter.Text.Trim().Length == 0 && e.KeyCode == Keys.Back)
+            {
+                this.resetBindingSource();
+            }
+        }
+
+        private void katalogosMainForm_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Escape)
+            {
+                this.clearTextInputs();
+                this.resetBindingSource();
+            }
         }
     }
 }
