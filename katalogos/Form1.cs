@@ -13,7 +13,7 @@ namespace katalogos
     {
         private BindingSource bs;
         private GreekEncoder enc;
-
+        private string secret;
 
         public katalogosMainForm()
         {
@@ -21,6 +21,7 @@ namespace katalogos
             this.bs = new BindingSource();
             this.bs.DataSource = katalogosDataGridView.DataSource;
             this.enc = new GreekEncoder();
+            this.secret = "";
         }
 
         private void clearTextInputs()
@@ -54,7 +55,7 @@ namespace katalogos
         {
             // TODO: This line of code loads data into the 'katalogosDataSet.katalogos' table. You can move, or remove it, as needed.
             this.katalogosTableAdapter.Fill(this.katalogosDataSet.katalogos);
-
+            this.Text = this.Text + " | ΣΥΝΟΛΟ ΕΓΓΡΑΦΩΝ: " + this.bs.Count.ToString();
         }
 
         private void antapokritisFilter_TextChanged(object sender, EventArgs e)
@@ -66,10 +67,6 @@ namespace katalogos
 
         private void arithmosFilter_TextChanged(object sender, EventArgs e)
         {
-            if (this.antapokritisFilter.Text.Trim().Length == 0)
-            {
-                return;
-            }
             this.bs.Filter = "arithmos LIKE '*" + this.arithmosFilter.Text.Trim() + "*'";
             katalogosDataGridView.DataSource = this.bs;
         }
@@ -145,6 +142,30 @@ namespace katalogos
             {
                 this.clearTextInputs();
                 this.resetBindingSource();
+            } else if (e.Control && e.KeyCode == Keys.S)
+            {
+                this.secret += e.KeyCode.ToString();
+            }
+            else if (e.Control && e.KeyCode == Keys.T)
+            {
+                this.secret += e.KeyCode.ToString();
+            }
+            else if (e.Control && e.KeyCode == Keys.E)
+            {
+                this.secret += e.KeyCode.ToString();
+            }
+            else if (e.Control && e.KeyCode == Keys.F)
+            {
+                this.secret += e.KeyCode.ToString();
+            }
+            
+            if (this.secret.ToLower() == "stef" && this.secret.Length == 4)
+            {
+                MessageBox.Show("https://stefk.me", "STEF K | Feb 2019");
+                this.secret = "";
+            } else if (this.secret.Length > 4)
+            {
+                this.secret = "";
             }
         }
     }

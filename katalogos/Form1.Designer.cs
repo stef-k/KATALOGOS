@@ -31,28 +31,29 @@
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(katalogosMainForm));
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.katalogosDataGridView = new System.Windows.Forms.DataGridView();
+            this.katalogosBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.katalogosDataSet = new katalogos.katalogosDataSet();
+            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.clearFilters = new System.Windows.Forms.Button();
+            this.antapokritisFilter = new wmgCMS.WaterMarkTextBox();
+            this.arithmosFilter = new wmgCMS.WaterMarkTextBox();
+            this.titlosFilter = new wmgCMS.WaterMarkTextBox();
+            this.stratopedoPerioxiFIlter = new wmgCMS.WaterMarkTextBox();
+            this.paratirisisFilter = new wmgCMS.WaterMarkTextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.katalogosTableAdapter = new katalogos.katalogosDataSetTableAdapters.katalogosTableAdapter();
+            this.tableAdapterManager = new katalogos.katalogosDataSetTableAdapters.TableAdapterManager();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.katalogosBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.katalogosDataSet = new katalogos.katalogosDataSet();
-            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.clearFilters = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.katalogosTableAdapter = new katalogos.katalogosDataSetTableAdapters.katalogosTableAdapter();
-            this.tableAdapterManager = new katalogos.katalogosDataSetTableAdapters.TableAdapterManager();
-            this.antapokritisFilter = new wmgCMS.WaterMarkTextBox();
-            this.arithmosFilter = new wmgCMS.WaterMarkTextBox();
-            this.titlosFilter = new wmgCMS.WaterMarkTextBox();
-            this.stratopedoPerioxiFIlter = new wmgCMS.WaterMarkTextBox();
-            this.paratirisisFilter = new wmgCMS.WaterMarkTextBox();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.katalogosDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.katalogosBindingSource)).BeginInit();
@@ -104,70 +105,22 @@
             this.dataGridViewTextBoxColumn5,
             this.dataGridViewTextBoxColumn6});
             this.katalogosDataGridView.DataSource = this.katalogosBindingSource;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.katalogosDataGridView.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.katalogosDataGridView.DefaultCellStyle = dataGridViewCellStyle4;
             this.katalogosDataGridView.Location = new System.Drawing.Point(3, 73);
+            this.katalogosDataGridView.MultiSelect = false;
             this.katalogosDataGridView.Name = "katalogosDataGridView";
             this.katalogosDataGridView.ReadOnly = true;
             this.katalogosDataGridView.RowHeadersWidth = 20;
+            this.katalogosDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.katalogosDataGridView.Size = new System.Drawing.Size(1178, 505);
             this.katalogosDataGridView.TabIndex = 1;
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "ID";
-            this.dataGridViewTextBoxColumn1.HeaderText = "ID";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            this.dataGridViewTextBoxColumn1.Visible = false;
-            this.dataGridViewTextBoxColumn1.Width = 34;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "antapokritis";
-            this.dataGridViewTextBoxColumn2.HeaderText = "ΑΝΤΑΠΟΚΡΙΤΗΣ";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "arithmos";
-            this.dataGridViewTextBoxColumn3.HeaderText = "ΑΡΙΘΜΟΣ";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dataGridViewTextBoxColumn4.DataPropertyName = "pliris_titlos";
-            this.dataGridViewTextBoxColumn4.HeaderText = "ΠΛΗΡΗΣ ΤΙΤΛΟΣ";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            this.dataGridViewTextBoxColumn4.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn5
-            // 
-            this.dataGridViewTextBoxColumn5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dataGridViewTextBoxColumn5.DataPropertyName = "stratopedo";
-            this.dataGridViewTextBoxColumn5.HeaderText = "ΣΤΡΑΤΟΠΕΔΟ-ΠΕΡΙΟΧΗ";
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            this.dataGridViewTextBoxColumn5.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn6
-            // 
-            this.dataGridViewTextBoxColumn6.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dataGridViewTextBoxColumn6.DataPropertyName = "paratirisis";
-            this.dataGridViewTextBoxColumn6.HeaderText = "ΠΑΡΑΤΗΡΗΣΕΙΣ";
-            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
-            this.dataGridViewTextBoxColumn6.ReadOnly = true;
             // 
             // katalogosBindingSource
             // 
@@ -214,30 +167,6 @@
             this.clearFilters.Text = "ΚΑΘΑΡΙΣΜΟΣ ΦΙΛΤΡΟΥ";
             this.clearFilters.UseVisualStyleBackColor = true;
             this.clearFilters.Click += new System.EventHandler(this.clearFilters_Click);
-            // 
-            // label1
-            // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.label1.AutoSize = true;
-            this.tableLayoutPanel2.SetColumnSpan(this.label1, 6);
-            this.label1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label1.Location = new System.Drawing.Point(3, 2);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(1172, 16);
-            this.label1.TabIndex = 9;
-            this.label1.Text = "ΤΑ ΦΙΛΤΡΑ ΛΕΙΤΟΥΡΓΟΥΝ ΚΑΙ ΣΕ ΣΥΝΔΥΑΣΜΟ ΜΕΤΑΞΥ ΤΟΥΣ - ΤΟ ESC ΚΑΘΑΡΙΖΕΙ ΤΑ ΠΕΔΙΑ";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // katalogosTableAdapter
-            // 
-            this.katalogosTableAdapter.ClearBeforeFill = true;
-            // 
-            // tableAdapterManager
-            // 
-            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
-            this.tableAdapterManager.katalogosTableAdapter = this.katalogosTableAdapter;
-            this.tableAdapterManager.UpdateOrder = katalogos.katalogosDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
             // antapokritisFilter
             // 
@@ -303,10 +232,88 @@
             this.paratirisisFilter.TextChanged += new System.EventHandler(this.paratirisisFilter_TextChanged);
             this.paratirisisFilter.KeyUp += new System.Windows.Forms.KeyEventHandler(this.paratirisisFilter_KeyUp);
             // 
+            // label1
+            // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.label1.AutoSize = true;
+            this.tableLayoutPanel2.SetColumnSpan(this.label1, 6);
+            this.label1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label1.Location = new System.Drawing.Point(3, 2);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(1172, 16);
+            this.label1.TabIndex = 9;
+            this.label1.Text = "ΤΟ ESC ΚΑΘΑΡΙΖΕΙ ΤΑ ΠΕΔΙΑ";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // katalogosTableAdapter
+            // 
+            this.katalogosTableAdapter.ClearBeforeFill = true;
+            // 
+            // tableAdapterManager
+            // 
+            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager.katalogosTableAdapter = this.katalogosTableAdapter;
+            this.tableAdapterManager.UpdateOrder = katalogos.katalogosDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "ID";
+            this.dataGridViewTextBoxColumn1.HeaderText = "ID";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            this.dataGridViewTextBoxColumn1.Visible = false;
+            this.dataGridViewTextBoxColumn1.Width = 34;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "antapokritis";
+            this.dataGridViewTextBoxColumn2.HeaderText = "ΑΝΤΑΠΟΚΡΙΤΗΣ";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "arithmos";
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Arial", 14F, System.Drawing.FontStyle.Bold);
+            this.dataGridViewTextBoxColumn3.DefaultCellStyle = dataGridViewCellStyle3;
+            this.dataGridViewTextBoxColumn3.HeaderText = "ΑΡΙΘΜΟΣ";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "pliris_titlos";
+            this.dataGridViewTextBoxColumn4.HeaderText = "ΠΛΗΡΗΣ ΤΙΤΛΟΣ";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            this.dataGridViewTextBoxColumn5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataGridViewTextBoxColumn5.DataPropertyName = "stratopedo";
+            this.dataGridViewTextBoxColumn5.HeaderText = "ΣΤΡΑΤΟΠΕΔΟ-ΠΕΡΙΟΧΗ";
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.dataGridViewTextBoxColumn5.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn6
+            // 
+            this.dataGridViewTextBoxColumn6.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataGridViewTextBoxColumn6.DataPropertyName = "paratirisis";
+            this.dataGridViewTextBoxColumn6.HeaderText = "ΠΑΡΑΤΗΡΗΣΕΙΣ";
+            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            this.dataGridViewTextBoxColumn6.ReadOnly = true;
+            // 
             // katalogosMainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.ClientSize = new System.Drawing.Size(1184, 561);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -338,18 +345,18 @@
         private katalogosDataSetTableAdapters.TableAdapterManager tableAdapterManager;
         private System.Windows.Forms.DataGridView katalogosDataGridView;
         private System.Windows.Forms.Button clearFilters;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
         private wmgCMS.WaterMarkTextBox antapokritisFilter;
         private wmgCMS.WaterMarkTextBox arithmosFilter;
         private wmgCMS.WaterMarkTextBox titlosFilter;
         private wmgCMS.WaterMarkTextBox stratopedoPerioxiFIlter;
         private wmgCMS.WaterMarkTextBox paratirisisFilter;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
     }
 }
 
