@@ -28,8 +28,11 @@ namespace katalogos
         {
             this.antapokritisFilter.Text = "";
             this.arithmosFilter.Text = "";
+            this.titlosFilter.Text = "";
             this.stratopedoPerioxiFIlter.Text = "";
             this.paratirisisFilter.Text = "";
+            this.antapokritisFilter.Focus();
+            this.katalogosDataGridView.ClearSelection();
         }
 
         private void resetBindingSource()
