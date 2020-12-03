@@ -57,7 +57,7 @@ namespace katalogos
         private void Form1_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'katalogosDataSet.katalogos' table. You can move, or remove it, as needed.
-            this.katalogosTableAdapter.Fill(this.katalogosDataSet.katalogos);
+            katalogosTableAdapter.Fill(this.katalogosDataSet.katalogos);
             this.Text = this.Text + " | ΣΥΝΟΛΟ ΕΓΓΡΑΦΩΝ: " + this.bs.Count.ToString();
         }
 
